@@ -1,4 +1,4 @@
-package com.example.keystoreapp.key_store_manager
+package com.example.keystoreapp.core.key_store_manager
 
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties

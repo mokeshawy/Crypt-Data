@@ -1,8 +1,8 @@
-package com.example.keystoreapp.storage_manager.di
+package com.example.keystoreapp.core.storage_manager.di
 
 import android.content.Context
-import com.example.keystoreapp.storage_manager.DataStoreHandler
-import com.example.keystoreapp.storage_manager.DataStoreManager
+import com.example.keystoreapp.core.storage_manager.prefernce_datastore.DataStoreHandler
+import com.example.keystoreapp.core.storage_manager.prefernce_datastore.DataStoreManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,7 +1,7 @@
-package com.example.keystoreapp.key_store_manager.di
+package com.example.keystoreapp.core.key_store_manager.di
 
-import com.example.keystoreapp.key_store_manager.CryptDataHandler
-import com.example.keystoreapp.key_store_manager.CryptDataManager
+import com.example.keystoreapp.core.key_store_manager.CryptDataHandler
+import com.example.keystoreapp.core.key_store_manager.CryptDataManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

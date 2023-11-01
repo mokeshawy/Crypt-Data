@@ -14,7 +14,7 @@
         android:theme="@style/Theme.KeyStoreApp"
         tools:targetApi="31">
         <activity
-            android:name="com.example.keystoreapp.activity.MainActivity"
+            android:name="com.example.keystoreapp.features.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

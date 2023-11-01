@@ -1,4 +1,4 @@
-package com.example.keystoreapp.activity
+package com.example.keystoreapp.features.activity
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -9,8 +9,8 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.lifecycle.lifecycleScope
 import com.example.keystoreapp.databinding.ActivityMainBinding
-import com.example.keystoreapp.key_store_manager.CryptDataHandler
-import com.example.keystoreapp.storage_manager.DataStoreHandler
+import com.example.keystoreapp.core.key_store_manager.CryptDataHandler
+import com.example.keystoreapp.core.storage_manager.prefernce_datastore.DataStoreHandler
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.util.Base64
@@ -18,8 +18,6 @@ import javax.inject.Inject
 
 const val SHARED_PREFERENCE_KEY = "KEY_STORE_APP"
 const val KEY_STORE_VALUE = "KEY_STORE_VALUE"
-
-//val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "DataStoreKey")
 
 val STRING_KEY: Preferences.Key<String> = stringPreferencesKey("STRING_KEY")
 

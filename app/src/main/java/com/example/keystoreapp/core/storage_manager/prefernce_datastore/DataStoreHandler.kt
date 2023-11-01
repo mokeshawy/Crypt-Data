@@ -1,4 +1,4 @@
-package com.example.keystoreapp.storage_manager
+package com.example.keystoreapp.core.storage_manager.prefernce_datastore
 
 import androidx.datastore.preferences.core.Preferences
 
@@ -15,4 +15,7 @@ interface DataStoreHandler {
 
     suspend fun setString(preferencesKey: Preferences.Key<String>, value: String)
     suspend fun getString(preferencesKey: Preferences.Key<String>): String?
+
+    suspend fun <T>  setObject(preferencesKey: Preferences.Key<String>, objects: T)
+    suspend fun <T> getObject(preferencesKey: Preferences.Key<String>, type: Class<T>): T?
 }

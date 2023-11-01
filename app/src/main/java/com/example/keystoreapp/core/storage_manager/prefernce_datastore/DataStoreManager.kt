@@ -1,10 +1,11 @@
-package com.example.keystoreapp.storage_manager
+package com.example.keystoreapp.core.storage_manager.prefernce_datastore
 
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
+import com.google.gson.GsonBuilder
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
@@ -15,6 +16,7 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = DAT
 
 class DataStoreManager @Inject constructor(@ApplicationContext context: Context) :
     DataStoreHandler {
+
     private val dataStore = context.dataStore
 
     override suspend fun setBoolean(preferencesKey: Preferences.Key<Boolean>, value: Boolean) {
@@ -43,5 +45,15 @@ class DataStoreManager @Inject constructor(@ApplicationContext context: Context)
     }
     override suspend fun getString(preferencesKey: Preferences.Key<String>) =
         dataStore.data.map { it[preferencesKey] }.first()
+
+    override suspend fun <T> setObject(preferencesKey: Preferences.Key<String>, objects: T) {
+        val jsonString = GsonBuilder().create().toJson(objects)
+        dataStore.edit { it[preferencesKey] = jsonString }
+    }
+
+    override suspend fun <T> getObject(preferencesKey: Preferences.Key<String>, type: Class<T>): T? {
+        val value = dataStore.data.map { it[preferencesKey] }.first()
+        return GsonBuilder().create().fromJson(value, type)
+    }
 
 }
