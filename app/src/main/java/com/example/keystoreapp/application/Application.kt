@@ -1,4 +1,4 @@
-package com.yabraa.keystoreapp.application
+package com.example.keystoreapp.application
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

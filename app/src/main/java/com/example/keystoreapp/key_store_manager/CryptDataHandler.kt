@@ -1,4 +1,4 @@
-package com.yabraa.keystoreapp.key_store_manager
+package com.example.keystoreapp.key_store_manager
 
 interface CryptDataHandler {
     fun encrypt(bytes: ByteArray): ByteArray

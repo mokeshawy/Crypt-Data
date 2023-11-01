@@ -1,4 +1,4 @@
-package com.yabraa.keystoreapp
+package com.example.keystoreapp
 
 import org.junit.Test
 
